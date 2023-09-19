@@ -1,6 +1,6 @@
-﻿using PatternExamples.Patterns.Creational.FactoryMethod.Interfaces;
+﻿using FactoryMethod.Interfaces;
 
-namespace PatternExamples.Patterns.Creational.FactoryMethod.Models
+namespace FactoryMethod.Models
 {
     internal class WindowsButton : IButton
     {

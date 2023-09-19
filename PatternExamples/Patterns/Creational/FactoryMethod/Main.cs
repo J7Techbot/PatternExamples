@@ -1,6 +1,6 @@
-﻿using PatternExamples.Patterns.Creational.FactoryMethod.Models;
+﻿using FactoryMethod.Models;
 
-namespace PatternExamples.Patterns.Creational.FactoryMethod
+namespace FactoryMethod
 {
     internal class Main
     {
