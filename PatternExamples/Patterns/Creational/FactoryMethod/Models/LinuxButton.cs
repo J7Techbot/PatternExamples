@@ -1,6 +1,6 @@
-﻿using PatternExamples.Patterns.FactoryMethod.Interfaces;
+﻿using PatternExamples.Patterns.Creational.FactoryMethod.Interfaces;
 
-namespace PatternExamples.Patterns.FactoryMethod.Models
+namespace PatternExamples.Patterns.Creational.FactoryMethod.Models
 {
     internal class LinuxButton : IButton
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternExamples.Patterns.FactoryMethod.Interfaces
+namespace PatternExamples.Patterns.Creational.FactoryMethod.Interfaces
 {
     internal interface IButton
     {

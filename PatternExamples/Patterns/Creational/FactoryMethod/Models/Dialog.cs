@@ -1,11 +1,11 @@
-﻿using PatternExamples.Patterns.FactoryMethod.Interfaces;
+﻿using PatternExamples.Patterns.Creational.FactoryMethod.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternExamples.Patterns.FactoryMethod.Models
+namespace PatternExamples.Patterns.Creational.FactoryMethod.Models
 {
     internal abstract class Dialog
     {
@@ -17,6 +17,6 @@ namespace PatternExamples.Patterns.FactoryMethod.Models
 
             okButton.OnClick();
             okButton.Render();
-        }        
+        }
     }
 }

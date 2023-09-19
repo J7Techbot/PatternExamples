@@ -1,10 +1,10 @@
-﻿using PatternExamples.Patterns.FactoryMethod;
+﻿using PatternExamples.Patterns.Creational.FactoryMethod;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        PatternExamples.Patterns.FactoryMethod.Main factoryMethod = new Main();
+        Main factoryMethod = new Main();
 
         factoryMethod.MainMethod();
 

@@ -1,11 +1,6 @@
-﻿using PatternExamples.Patterns.FactoryMethod.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PatternExamples.Patterns.Creational.FactoryMethod.Models;
 
-namespace PatternExamples.Patterns.FactoryMethod
+namespace PatternExamples.Patterns.Creational.FactoryMethod
 {
     internal class Main
     {
@@ -23,7 +18,7 @@ namespace PatternExamples.Patterns.FactoryMethod
             {
                 _dialog = new LinuxDialog();
             }
-            
+
         }
 
         public void MainMethod()
