@@ -17,7 +17,6 @@
             total = CalculateTotal();
         }
 
-
         public double CalculateTotal()
         {
             double price = (book.Price - book.Price * discountRate) * quantity;
