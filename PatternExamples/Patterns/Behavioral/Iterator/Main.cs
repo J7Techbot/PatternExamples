@@ -1,4 +1,5 @@
 ﻿using Iterator.Collections;
+
 using Iterator.Models;
 
 namespace Iterator
@@ -26,6 +27,8 @@ namespace Iterator
             Console.WriteLine("\nReverse traversal:");
 
             _metadataCollection.ReverseDirection();
+
+            _metadataCollection.SetIterator(Enums.IteratorTypes.ID_ITERATOR);
 
             foreach (var element in _metadataCollection)
             {
