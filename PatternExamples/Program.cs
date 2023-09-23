@@ -1,5 +1,6 @@
 ﻿using FactoryMethod;
 using AbstractFactory;
+using Facade.Facades;
 
 internal class Program
 {
@@ -29,6 +30,14 @@ internal class Program
         Builder.Main builder = new Builder.Main();
 
         builder.MainMethod();
+
+        ///Facade
+
+        Console.WriteLine("\nFACADE");
+
+        Facade.Main facade = new Facade.Main(new ShoppingFacade());
+
+        facade.MainMethod();
 
         ///END
         Console.ReadKey();

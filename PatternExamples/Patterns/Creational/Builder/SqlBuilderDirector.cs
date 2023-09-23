@@ -1,6 +1,6 @@
 ﻿using Builder.Interfaces;
 
-namespace PatternExamples.Patterns.Creational.Builder
+namespace Builder
 {
     internal class SqlBuilderDirector
     {

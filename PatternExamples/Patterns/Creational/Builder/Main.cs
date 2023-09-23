@@ -1,6 +1,6 @@
 ﻿using Builder.Builders;
 using Builder.Interfaces;
-using PatternExamples.Patterns.Creational.Builder;
+using Builder;
 
 namespace Builder
 {
@@ -25,7 +25,11 @@ namespace Builder
 
             ///alternate use
             _sqlQueryBuilder = new MySqlQueryBuilder();
-            var mysql = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" }).Where("name", "pizza").Operator("AND").Where("type", "salami").GetSQL();
+            var mysql = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" })
+                .Where("name", "pizza")
+                .Operator("AND")
+                .Where("type", "salami")
+                .GetSQL();
             Console.WriteLine(mysql);
 
             _sqlQueryBuilder = new MsSqlQueryBuilder();
