@@ -6,9 +6,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        ///START
-
-
         ///Factory method
         Console.WriteLine("\nFACTORY METHOD");
 
@@ -39,7 +36,16 @@ internal class Program
 
         facade.MainMethod();
 
-        ///END
+        ///Facade
+
+        Console.WriteLine("\nITERATOR");
+
+        Iterator.Main iterator = new Iterator.Main();
+
+        iterator.MainMethod();
+
+
+
         Console.ReadKey();
     }
 }
