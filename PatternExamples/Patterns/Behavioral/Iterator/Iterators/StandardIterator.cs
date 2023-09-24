@@ -8,12 +8,10 @@ namespace Iterator.Iterators
 
         private int _position = -1;
 
-        private bool _reverse = false;
-
         public StandardIterator(MetadataCollection collection, bool reverse = false)
         {
             this._collection = collection;
-            this._reverse = reverse;
+            this.Reverse = reverse;
 
             if (reverse)
             {
@@ -29,7 +27,7 @@ namespace Iterator.Iterators
 
         public override bool MoveNext()
         {
-            int updatedPosition = this._position + (this._reverse ? -1 : 1);
+            int updatedPosition = this._position + (this.Reverse ? -1 : 1);
 
             if (updatedPosition >= 0 && updatedPosition < this._collection.GetItems().Count)
             {
@@ -44,7 +42,12 @@ namespace Iterator.Iterators
 
         public override void Reset()
         {
-            this._position = this._reverse ? this._collection.GetItems().Count - 1 : 0;
+            if (Reverse)
+            {
+                this._position = _collection.GetItems().Count;
+            }
+            else
+                this._position = -1;
         }
     }
 }

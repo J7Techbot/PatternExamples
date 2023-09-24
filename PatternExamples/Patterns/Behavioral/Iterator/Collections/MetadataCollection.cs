@@ -1,21 +1,29 @@
-﻿using Iterator.Enums;
-using Iterator.Iterators;
+﻿using Iterator.Factory;
+using Iterator.Interfaces;
 using Iterator.Models;
 using System.Collections;
 
 namespace Iterator.Collections
 {
+    /// <summary>
+    /// Custom collection for store metadata
+    /// </summary>
     internal class MetadataCollection : IteratorAggregate
     {
         List<Metadata> _collection = new List<Metadata>();
 
-        IEnumerator _iterator;
+        IIterator _iterator;
 
         bool _direction = false;
 
+        public MetadataCollection(IIteratorFactory factory)
+        {
+            _iterator = factory.Create(this, false);
+        }
+
         public void ReverseDirection()
         {
-            _direction = !_direction;
+            _iterator.ReverseDirection();
         }
 
         public List<Metadata> GetItems()
@@ -33,25 +41,14 @@ namespace Iterator.Collections
             this._collection.Add(item);
         }
 
-        public void SetIterator(IteratorTypes iteratorType)
+        public void SetIterator(IIteratorFactory factory)
         {
-            switch(iteratorType)
-            {
-                case IteratorTypes.STANDARD_ITERATOR:
-                    _iterator = new StandardIterator(this, _direction);
-                    break;
-                case IteratorTypes.ID_ITERATOR:
-                    _iterator = new IdIterator(this, _direction);
-                    break;
-            }
+            _iterator = factory.Create(this, _direction);
         }
 
         public override IEnumerator GetEnumerator()
         {
-            if (_iterator != null)
-                return _iterator;
-            else 
-                return new StandardIterator(this, _direction);
+            return _iterator;
         }
     }
 }

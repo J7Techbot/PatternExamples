@@ -9,12 +9,10 @@ namespace Iterator.Iterators
 
         private int _position = -1;
 
-        private bool _reverse = false;
-
         public IdIterator(MetadataCollection collection, bool reverse = false)
         {
             this._collection = collection;
-            this._reverse = reverse;
+            this.Reverse = reverse;
         }
         public override object Current()
         {
@@ -29,8 +27,10 @@ namespace Iterator.Iterators
            
             if (_position == -1)
             {
-                int firstId = _reverse ? collection.Max(item => item.Id) : collection.Min(item => item.Id);
+                ///select first item 
+                int firstId = Reverse ? collection.Max(item => item.Id) : collection.Min(item => item.Id);
 
+                ///and find its position in collection
                 updatedPosition = collection.FindIndex(item => item.Id == firstId);
             }
             else
@@ -39,11 +39,15 @@ namespace Iterator.Iterators
 
                 Metadata? closestObject = null;
 
-                if (_reverse)
+                ///If the Reverse is true, it will search for all IDs lower than the currentId,
+                ///sort them in descending order, and select the first one.
+                if (Reverse)
                     closestObject = collection
                        .Where(obj => obj.Id < currentId)
                        .OrderByDescending(obj => obj.Id)
                        .FirstOrDefault();
+
+                ///search for all IDs higher than the currentId, sort and select the first one.
                 else
                     closestObject = collection
                         .Where(obj => obj.Id > currentId)
@@ -51,7 +55,6 @@ namespace Iterator.Iterators
                         .FirstOrDefault();
 
                 updatedPosition = collection.IndexOf(closestObject);
-
             }
 
             this._position = updatedPosition;
