@@ -36,7 +36,7 @@ internal class Program
 
         facade.MainMethod();
 
-        ///Facade
+        ///Iterator
 
         Console.WriteLine("\nITERATOR");
 
@@ -44,7 +44,13 @@ internal class Program
 
         iterator.MainMethod();
 
+        ///Observer
 
+        Console.WriteLine("\nOBSERVER");
+
+        Observer.Main observer = new Observer.Main();
+
+        observer.MainMethod();
 
         Console.ReadKey();
     }
