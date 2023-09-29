@@ -52,6 +52,14 @@ internal class Program
 
         observer.MainMethod();
 
+        ///Command
+
+        Console.WriteLine("\nCOMMAND");
+
+        Command.Main command = new Command.Main();
+
+        command.MainMethod();
+
         Console.ReadKey();
     }
 }

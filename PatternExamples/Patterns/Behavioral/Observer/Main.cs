@@ -14,9 +14,7 @@ namespace Observer
             _EULAManager = new EULAManager();
             _fileManager = new FileManager();
             _johnny = new User("Johnny");
-            _jimmy = new User("Jimmy");
-
-           
+            _jimmy = new User("Jimmy");           
         }
 
         public void MainMethod()
