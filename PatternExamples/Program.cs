@@ -58,7 +58,15 @@ internal class Program
 
         Command.Main command = new Command.Main();
 
-        command.MainMethod();
+        command.MainMethod();        
+
+        ///Adapter
+
+        Console.WriteLine("\nADAPTER");
+
+        Adapter.Main adapter = new Adapter.Main();
+
+        adapter.MainMethod();
 
         Console.ReadKey();
     }
