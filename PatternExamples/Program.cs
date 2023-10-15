@@ -68,6 +68,14 @@ internal class Program
 
         adapter.MainMethod();
 
+        ///Composite
+
+        Console.WriteLine("\nCOMPOSITE");
+
+        Composite.Main composite = new Composite.Main();
+
+        composite.MainMethod();
+
         Console.ReadKey();
     }
 }

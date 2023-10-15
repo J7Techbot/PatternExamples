@@ -1,7 +1,6 @@
 ﻿using Adapter.Adapters;
 using Adapter.Interfaces;
 using Adapter.Services;
-using PatternExamples.Patterns.Structural.Adapter.Services;
 
 namespace Adapter
 {
