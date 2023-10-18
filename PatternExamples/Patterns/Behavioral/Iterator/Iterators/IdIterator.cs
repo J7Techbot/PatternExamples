@@ -16,7 +16,15 @@ namespace Iterator.Iterators
         }
         public override object Current()
         {
-            return this._collection.GetItems()[_position];
+            if (this._collection.GetItems().Count > 0)
+            {
+                if (_position == -1)
+                    return this._collection.GetItems()[0];
+                else
+                    return this._collection.GetItems()[_position];
+            }
+            else
+                return null;
         }
 
         public override bool MoveNext()
