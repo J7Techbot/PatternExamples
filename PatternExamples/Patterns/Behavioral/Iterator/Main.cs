@@ -14,11 +14,19 @@ namespace Iterator
             _metadataCollection = new MetadataCollection(new StandardIteratorFactory());
             _metadataCollection.AddItem(new Metadata(2, "Author"));
             _metadataCollection.AddItem(new Metadata(1, "DateIssued"));
-            _metadataCollection.AddItem(new Metadata(3, "Language"));          
+            _metadataCollection.AddItem(new Metadata(3, "Language"));
         }
 
         public void MainMethod()
         {
+            //_metadataCollection = new MetadataCollection(new StandardIteratorFactory());
+            //_metadataCollection.AddItem(new Metadata(2, "Author"));
+            //_metadataCollection.AddItem(new Metadata(1, "DateIssued"));
+            //_metadataCollection.AddItem(new Metadata(3, "Language"));
+            //StandardIterator si = new StandardIterator(_metadataCollection);
+            //si.Reset();
+            //var s = si.Current();
+
             Console.WriteLine("Straight standard traversal:");
 
             foreach (var element in _metadataCollection)
