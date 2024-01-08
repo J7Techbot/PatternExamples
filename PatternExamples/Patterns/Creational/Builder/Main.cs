@@ -14,27 +14,40 @@ namespace Builder
             _sqlQueryBuilder.Where("name", "pizza");
             _sqlQueryBuilder.Operator("AND");
             _sqlQueryBuilder.Where("type", "salami");
-            var buildedMySql = _sqlQueryBuilder.GetSQL();
-            Console.WriteLine(buildedMySql);
+            var query = _sqlQueryBuilder.GetSQL();
+            Console.WriteLine(query);
 
             ///director use
             SqlBuilderDirector builderDirector = new SqlBuilderDirector();
             builderDirector.BuildSimpleSelect(_sqlQueryBuilder, "Food");
-            var directorBuildSql = _sqlQueryBuilder.GetSQL();
-            Console.WriteLine(directorBuildSql);
+            var directorQuery = _sqlQueryBuilder.GetSQL();
+            Console.WriteLine(directorQuery);
 
             ///alternate use
             _sqlQueryBuilder = new MySqlQueryBuilder();
-            var mysql = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" })
+            query = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" })
                 .Where("name", "pizza")
                 .Operator("AND")
                 .Where("type", "salami")
                 .GetSQL();
-            Console.WriteLine(mysql);
+            Console.WriteLine(query);
 
             _sqlQueryBuilder = new MsSqlQueryBuilder();
-            var mssql = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" }).Where("name", "pizza").Operator("AND").Where("type", "salami").GetSQL();
-            Console.WriteLine(mssql);
+            query = _sqlQueryBuilder.Select("Food", new string[] { "name", "type", "origin" }).Where("name", "pizza").Operator("AND").Where("type", "salami").GetSQL();
+            Console.WriteLine(query);
+        }
+    }
+
+    internal class Wrong
+    {
+        string table = "Food";
+        string where = "Name = pizza";
+        string where2 = "Type = salami";
+
+        private void CreateQuery()
+        {
+            string query = $"SELECT {table} FROM {new string[] { "name", "type", "origin" }} where {where} AND {where2}";
+            Console.WriteLine(query);
         }
     }
 }
